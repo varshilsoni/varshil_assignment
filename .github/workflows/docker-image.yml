@@ -22,7 +22,9 @@ jobs:
     - name: Push image to DockerHub
       working-directory: guestbook-go
       run: |
-        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        #docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        docker build -t app .
         docker login -u varshilsoni -p dckr_pat_Fi6O6jKtY0PHPBpj0KyxHOstXNg
+        docker tag app varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
         

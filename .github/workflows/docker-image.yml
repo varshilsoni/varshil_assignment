@@ -14,6 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - working-directory: guestbook-go
+    
     - name: Build the Docker image
+      working-directory: guestbook-go
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)

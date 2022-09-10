@@ -15,13 +15,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Build the Docker image
-      working-directory: guestbook-go
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    #- name: Build the Docker image
+      #working-directory: guestbook-go
+      #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       
     - name: Push image to DockerHub
+      working-directory: guestbook-go
       run: |
-        docker login -u varshilsoni -p dckr_pat_Fi6O6jKtY0PHPBpj0KyxHOstXNg
-        docker tag docker-image varshilsoni/varshil_ridecell_assignment
+        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }}
+        #docker tag docker-image varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
         

@@ -24,6 +24,6 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag my-image-name:$(date +%s)
         docker login -u varshilsoni -p dckr_pat_Fi6O6jKtY0PHPBpj0KyxHOstXNg
-        #docker tag docker-image varshilsoni/varshil_ridecell_assignment
+        docker tag docker-image varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
         

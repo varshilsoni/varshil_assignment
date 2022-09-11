@@ -26,6 +26,8 @@ jobs:
         echo Container list.
         docker container list
         
+        docker container run app
+        
     - name: Login to DockerHub Registry.
       uses: docker/login-action@v2
       with:

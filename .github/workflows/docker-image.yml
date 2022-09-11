@@ -15,11 +15,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       
-    - name: Build the Docker Image and Push image to DockerHub
+    - name: Build the Docker Image
       working-directory: guestbook-go
       run: |
         docker build -t app .
-        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }} --password-stdin
+        #docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }} --password-stdin
+        #docker tag app varshilsoni/varshil_ridecell_assignment
+        #docker push varshilsoni/varshil_ridecell_assignment
+        
+    - name: Login to DockerHub Registry
+      run: echo ${{ secrets.DOCKER_SECRET }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+
+    - name: Push Image to DockerHub Registry
+      run: |
         docker tag app varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
-        

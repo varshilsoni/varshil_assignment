@@ -21,7 +21,7 @@ jobs:
         docker build -t app .
         
         echo name of container.
-        docker run -dp 3000:3000 app     
+        docker run -dp 8080:8080 app     
         
         echo Container list.
         docker container list
@@ -40,6 +40,6 @@ jobs:
         
     - name: Push Image to k8s.
       run: |
-        kubectl run app-pod --image=app --port=3000
+        kubectl run app-pod --image=app --port=8080
         kubectl get pods|egrep -i "^NAME|app-pod"
 

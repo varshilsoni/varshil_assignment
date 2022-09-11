@@ -19,8 +19,7 @@ jobs:
       working-directory: guestbook-go
       run: |
         docker build -t app .
-        docker images
-        docker run app
+        docker run -dp 3000:3000 app
         docker ps -a
         docker container list
         

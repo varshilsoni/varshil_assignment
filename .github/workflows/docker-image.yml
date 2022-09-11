@@ -20,7 +20,7 @@ jobs:
       run: docker build -t app .
         
     - name: Login to DockerHub Registry
-      run: echo ${{ secrets.DOCKER_SECRET }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+      run: winpty docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }} --password-stdin
 
     - name: Push Image to DockerHub Registry
       run: |

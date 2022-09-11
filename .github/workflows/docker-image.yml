@@ -38,8 +38,10 @@ jobs:
         docker push varshilsoni/varshil_ridecell_assignment
         
     - name: Push Image to k8s.
+      working-directory: guestbook-go
       run: |
         minikube start
+        kubectl create -f podFile.yml
         kubectl get pods
         
 

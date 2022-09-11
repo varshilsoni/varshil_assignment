@@ -36,10 +36,10 @@ jobs:
       run: |
         docker tag app varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
-        minikube status
         
     - name: Push Image to k8s.
       run: |
+        minikube start
         kubectl run app-pod --image=app --port=8080
         kubectl get pods|egrep -i "^NAME|app-pod"
 

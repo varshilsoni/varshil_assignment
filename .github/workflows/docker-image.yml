@@ -40,6 +40,6 @@ jobs:
     - name: Push Image to k8s.
       run: |
         minikube start
-        kubectl run app-pod --image=app --port=8080
-        kubectl get pods|egrep -i "^NAME|app-pod"
+        kubectl get pods
+        
 

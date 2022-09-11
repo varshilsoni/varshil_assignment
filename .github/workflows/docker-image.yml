@@ -20,7 +20,7 @@ jobs:
       run: |
         docker build -t app .
         docker images
-        docker container start
+        docker container start app
         docker container list
         
     - name: Login to DockerHub Registry.

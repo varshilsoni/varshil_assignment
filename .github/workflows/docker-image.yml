@@ -21,7 +21,7 @@ jobs:
         docker build -t app .
         
         echo name of container.
-        docker run -dp 8080:8080 app     
+        docker run -dp 3000:3000 app     
         
         echo Container list.
         docker container list

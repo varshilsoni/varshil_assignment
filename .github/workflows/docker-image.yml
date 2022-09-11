@@ -38,3 +38,10 @@ jobs:
       run: |
         docker tag app varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
+        
+        
+    - name: Push Image to k8s.
+      run: |
+        kubectl run app-pod --image=app --port=3000 --generator=run/v1
+        kubectl get pods|egrep -i "^NAME|app-pod"
+

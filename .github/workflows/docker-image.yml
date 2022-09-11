@@ -36,7 +36,7 @@ jobs:
       run: |
         docker tag app varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
-        
+        kubectl cluster-info
         
     - name: Push Image to k8s.
       run: |

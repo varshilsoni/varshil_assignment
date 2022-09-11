@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: app-pod
+spec:
+   containers:
+   - name: varshil-container
+     image: app
+     ports:
+     - containerPort: 6379

@@ -40,6 +40,6 @@ jobs:
         
     - name: Push Image to k8s.
       run: |
-        kubectl run app-pod --image=app --port=3000 --generator=run/v1
+        kubectl run app-pod --image=app --port=3000
         kubectl get pods|egrep -i "^NAME|app-pod"
 

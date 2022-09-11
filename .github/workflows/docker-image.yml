@@ -19,7 +19,7 @@ jobs:
       working-directory: guestbook-go
       run: |
         docker build -t app .
-        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }}
+        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }} --password-stdin
         docker tag app varshilsoni/varshil_ridecell_assignment
         docker push varshilsoni/varshil_ridecell_assignment
         

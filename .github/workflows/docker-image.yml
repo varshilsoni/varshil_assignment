@@ -20,6 +20,7 @@ jobs:
       run: |
         docker build -t app .
         docker images
+        docker container list
         
     - name: Login to DockerHub Registry.
       uses: docker/login-action@v2

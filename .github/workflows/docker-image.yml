@@ -19,10 +19,11 @@ jobs:
       working-directory: guestbook-go
       run: |
         docker build -t app .
-        echo name of container.
-        docker run app
         
-        docker ps -a
+        echo name of container.
+        docker run -dp 3000:3000 app     
+        
+        echo Container list.
         docker container list
         
     - name: Login to DockerHub Registry.

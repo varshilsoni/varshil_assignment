@@ -41,7 +41,7 @@ jobs:
       working-directory: guestbook-go
       run: |
         minikube start
-        --disable-admission-plugins=ServiceAccount
+        kubectl --disable-admission-plugins=ServiceAccount
         kubectl create -f podFile.yml
         kubectl get pods
         
